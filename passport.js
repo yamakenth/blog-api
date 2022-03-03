@@ -2,8 +2,9 @@ require('dotenv').config();
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-// import { Strategy as LocalStrategy} from 'passport-local';
-// import { Strategy as JWTStrategy, ExtractJwt as ExtractJWT } from 'passport-jwt';
+var passportJWT = require('passport-jwt');
+var JWTStrategy = passportJWT.Strategy;
+var ExtractJWT = passportJWT.ExtractJwt;
 
 var User = require('./models/user');
 
@@ -26,3 +27,21 @@ passport.use(new LocalStrategy((username, password, done) => {
   });
 }));
 
+passport.use(new JWTStrategy(
+  {
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey: process.env.JWT_SECRET
+  },
+  (jwtPayload, done) => {
+    User.findOne({ _id: jwtPayload.data._id }, (err, user) => {
+      if (err) {
+        return done(err, false);
+      }
+      if (user) {
+        return done(null, user);
+      } else {
+        return done(null, false);
+      }
+    });
+  }
+));

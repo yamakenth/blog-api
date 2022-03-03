@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
 var article_controller = require('../controllers/articleController');
 var comment_controller = require('../controllers/commentController');
@@ -9,7 +10,11 @@ var user_controller = require('../controllers/userController');
 
 // post an article 
 // protected 
-router.post('/articles', article_controller.article_post);
+router.post(
+  '/articles', 
+  passport.authenticate('jwt', { session: false }), 
+  article_controller.article_post
+);
 
 // get list of all articles 
 router.get('/articles', article_controller.article_list_get);
