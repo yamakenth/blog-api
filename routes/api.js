@@ -24,7 +24,11 @@ router.get('/articles/:articleid', article_controller.article_get);
 
 // update an article 
 // protected
-router.put('/articles/:articleid', article_controller.article_put);
+router.put(
+  '/articles/:articleid', 
+  passport.authenticate('jwt', { session: false }),
+  article_controller.article_put
+);
 
 // delete an article 
 // protected
