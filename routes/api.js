@@ -52,6 +52,10 @@ router.post('/users/login', user_controller.user_login_post);
 
 // get a list of users 
 // protected 
-router.get('/users', user_controller.user_list_get);
+router.get(
+  '/users', 
+  passport.authenticate('jwt', { session: false }), 
+  user_controller.user_list_get
+);
 
 module.exports = router;
