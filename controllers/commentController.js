@@ -38,5 +38,8 @@ exports.comment_list_get = function(req, res) {
 
 // delete a comment 
 exports.comment_delete = function(req, res) {
-  res.send('COMMENT DELETE');
+  Comment.findByIdAndRemove(req.params.commentid, (err) => {
+    if (err) res.status(400).json('Error: ' + err);
+    res.send('COMMENT SUCCESSFULLY DELETED');
+  });
 }

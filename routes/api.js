@@ -48,7 +48,11 @@ router.get('/articles/:articleid/comments', comment_controller.comment_list_get)
 
 // delete a comment 
 // protected
-router.delete('/articles/:articleid/comments/:commentid', comment_controller.comment_delete);
+router.delete(
+  '/articles/:articleid/comments/:commentid', 
+  passport.authenticate('jwt', { session: false }),
+  comment_controller.comment_delete
+);
 
 /* USERS */
 
