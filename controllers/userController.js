@@ -61,5 +61,9 @@ exports.user_login_post = function(req, res) {
 
 // get a list of users  
 exports.user_list_get = function(req, res) {
-  res.send('USERS GET');
+  User.find()
+    .exec((err, users) => {
+      if (err) res.status(400).json('Error: ' + err);
+      res.send(users);
+    });
 }
