@@ -29,7 +29,11 @@ exports.comment_post = [
 
 // get a list of comments by article id 
 exports.comment_list_get = function(req, res) {
-  res.send('COMMENTS GET');
+  Comment.find({ article: req.params.articleid })
+    .exec((err, comments) => {
+      if (err) res.status(400).json('Error: ' + err);
+      res.send(comments);
+    });
 }
 
 // delete a comment 
