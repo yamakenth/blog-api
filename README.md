@@ -9,6 +9,7 @@
 - Users who are signed in (JWT auth) can create, read, edit, and delete blog posts 
 - Users who are not signed in can create and read comments
 - Users who are signed in (JWT auth) can create, read, and delete comments
+- Hosted on [Heroku](https://yamakenth-blog-api-server.herokuapp.com/)
 ## Live Demo
 - [Link to client frontend]()
 - [Link to client(admin) frontend]()
