@@ -32,7 +32,12 @@ exports.article_post = [
 
 // get list of articles 
 exports.article_list_get = function(req, res) {
-  res.send('ARTICLES GET');
+  Article.find()
+    .populate('author')
+    .exec((err, articles) => {
+      if (err) res.status(400).json('Error: ' + err);
+      res.send(articles);
+    });
 }
 
 // get an article 
