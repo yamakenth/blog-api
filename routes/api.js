@@ -32,7 +32,11 @@ router.put(
 
 // delete an article 
 // protected
-router.delete('/articles/:articleid', article_controller.article_delete);
+router.delete(
+  '/articles/:articleid', 
+  passport.authenticate('jwt', { session: false }),
+  article_controller.article_delete
+);
 
 /* COMMENTS */
 

@@ -81,5 +81,8 @@ exports.article_put = [
 
 // delete an article 
 exports.article_delete = function(req, res) {
-  res.send('ARTICLE DELETE');
+  Article.findByIdAndRemove(req.params.articleid, (err) => {
+    if (err) res.status(400).json('Error: ' + err);
+    res.send('ARTICLE SUCCESSFULLY DELETED');
+  });
 }
