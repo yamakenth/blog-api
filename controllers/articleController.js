@@ -42,7 +42,12 @@ exports.article_list_get = function(req, res) {
 
 // get an article 
 exports.article_get = function(req, res) {
-  res.send('ARTICLE GET');
+  Article.findOne({ _id: req.params.articleid })
+    .populate('author')
+    .exec((err, article) => {
+      if (err) res.status(400).json('Error: ' + err);
+      res.send(article);
+    });
 }
 
 // update an article 
