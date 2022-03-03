@@ -27,6 +27,7 @@ passport.use(new LocalStrategy((username, password, done) => {
   });
 }));
 
+// jwt startegy
 passport.use(new JWTStrategy(
   {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
