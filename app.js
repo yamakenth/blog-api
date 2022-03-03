@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
+require('./passport');
 
 // connection to MongoDB
 mongoose.connect(process.env.MONGO_DB_URI, { useNewUrlParser: true, useUnifiedtopology: true });
