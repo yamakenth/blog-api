@@ -11,7 +11,7 @@
 - Users who are signed in (JWT auth) can create, read, and delete comments
 - Hosted on [Heroku](https://yamakenth-blog-api-server.herokuapp.com/)
 ## Live Demo
-- [Link]() to client(admin) frontend (This repo)
+- [Link](https://yamakenth.github.io/blog-api-client-admin/) to client(admin) frontend
 - [Link](https://yamakenth.github.io/blog-api-client/) to client frontend
 ## Skills/Technology Practiced:
 - Node.js
