@@ -25,7 +25,7 @@ function Login() {
       password
     };
 
-    axios.post(`https://yamakenth-blog-api-server.herokuapp.com/api/users/login`, user)
+    axios.post(`https://blog-api-server-rddz.onrender.com/api/users/login`, user)
       .then(res => {
         console.log(res.data);
         if (res.data.message) {

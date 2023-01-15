@@ -31,7 +31,7 @@ function Signup() {
       'password-confirm': passwordConfirm
     };
 
-    axios.post(`https://yamakenth-blog-api-server.herokuapp.com/api/users/signup`, user)
+    axios.post(`https://blog-api-server-rddz.onrender.com/api/users/signup`, user)
       .then(res => {
         if (res.data.errors) {
           setError(res.data.errors[0]);

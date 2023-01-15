@@ -24,7 +24,7 @@ function ArticleList() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    axios.get('https://yamakenth-blog-api-server.herokuapp.com/api/articles')
+    axios.get('https://blog-api-server-rddz.onrender.com/api/articles')
       .then(res => {
         setArticles(res.data);
       })

@@ -23,7 +23,7 @@ function ArticleDisplay(props) {
   useEffect(() => {
     // if edit mode then fetch data 
     if (props.actionType === 'edit') {
-      axios.get(`https://yamakenth-blog-api-server.herokuapp.com/api/articles/${id}`)
+      axios.get(`https://blog-api-server-rddz.onrender.com/api/articles/${id}`)
         .then(res => {
           const data = res.data;
   
@@ -39,7 +39,7 @@ function ArticleDisplay(props) {
     }
 
     // fetch list of users for author dropdown 
-    axios.get('https://yamakenth-blog-api-server.herokuapp.com/api/users', {
+    axios.get('https://blog-api-server-rddz.onrender.com/api/users', {
       headers: { Authorization: localStorage.getItem('token') }
     })
       .then(res => {
@@ -93,7 +93,7 @@ function ArticleDisplay(props) {
     // edit mode
     if (props.actionType === 'edit') {
       axios.put(
-        `https://yamakenth-blog-api-server.herokuapp.com/api/articles/${id}`, 
+        `https://blog-api-server-rddz.onrender.com/api/articles/${id}`, 
         jsonPayload,
         authHeader
       ).then(res => handleEditRes(res))
@@ -102,7 +102,7 @@ function ArticleDisplay(props) {
     // create mode
     if (props.actionType === 'create') {
       axios.post(
-        'https://yamakenth-blog-api-server.herokuapp.com/api/articles', 
+        'https://blog-api-server-rddz.onrender.com/api/articles', 
         jsonPayload,
         authHeader
       ).then(res => handleEditRes(res))
@@ -110,7 +110,7 @@ function ArticleDisplay(props) {
   }
 
   function handleDelete() {
-    axios.delete(`https://yamakenth-blog-api-server.herokuapp.com/api/articles/${id}`,
+    axios.delete(`https://blog-api-server-rddz.onrender.com/api/articles/${id}`,
       { headers: { Authorization: localStorage.getItem('token') } }
     )
       .then(res => {
