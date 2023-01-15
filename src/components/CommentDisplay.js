@@ -8,7 +8,7 @@ function CommentDisplay(props) {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://yamakenth-blog-api-server.herokuapp.com/api/articles/${props.articleid}/comments`)
+    axios.get(`https://blog-api-server-rddz.onrender.com/api/articles/${props.articleid}/comments`)
       .then(res => {
         setComments(res.data);
       })

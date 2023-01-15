@@ -24,7 +24,7 @@ function CommentCreate() {
       text
     };
 
-    axios.post(`https://yamakenth-blog-api-server.herokuapp.com/api/articles/${id}/comments`, comment)
+    axios.post(`https://blog-api-server-rddz.onrender.com/api/articles/${id}/comments`, comment)
       .then(res => {
         console.log(res);
         setAuthor('');

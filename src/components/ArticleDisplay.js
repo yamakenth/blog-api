@@ -18,7 +18,7 @@ function ArticleDisplay() {
   });
 
   useEffect(() => {
-    axios.get(`https://yamakenth-blog-api-server.herokuapp.com/api/articles/${id}`)
+    axios.get(`https://blog-api-server-rddz.onrender.com/api/articles/${id}`)
       .then(res => {
         setArticle(res.data);
       })
