@@ -6,6 +6,7 @@ import moment from "moment";
 
 import CommentDisplay from "./CommentDisplay";
 import CommentCreate from "./CommentCreate";
+import Loader from "./Loader";
 
 function ArticleDisplay() {
   const { id } = useParams();
@@ -27,6 +28,10 @@ function ArticleDisplay() {
         console.log(err);
       });
   }, [id]);
+
+  if (article.createdAt === "") {
+    return <Loader />;
+  }
 
   return (
     <>
