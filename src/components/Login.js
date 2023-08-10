@@ -80,6 +80,12 @@ function Login() {
           onChange={handlePasswordChange}
         />
       </Form.Group>
+      <span className="align-self-center text-secondary">
+        Test Username: user1
+      </span>
+      <span className="align-self-center text-secondary mb-3">
+        Test Password: user1
+      </span>
       <button type="submit" className="btn btn-primary align-self-center">
         Submit
       </button>
