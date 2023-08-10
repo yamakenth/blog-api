@@ -4,6 +4,7 @@ import axios from "axios";
 import _ from "underscore";
 import moment from "moment";
 import { Card, Row, Col } from "react-bootstrap";
+import Loader from "./Loader";
 
 // helper method to slice strings
 function sliceStr(str, len) {
@@ -33,6 +34,10 @@ function ArticleList() {
         console.log(err);
       });
   }, []);
+
+  if (articles.length === 0) {
+    return <Loader />;
+  }
 
   return (
     <>
