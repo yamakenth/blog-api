@@ -1,0 +1,18 @@
+#root {
+  background-color: #f3f3f3;
+}
+
+header {
+  position: sticky !important;
+}
+
+.main-content {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  min-height: 90vh;
+}
+
+.article-card {
+  min-height: 250px;
+}
