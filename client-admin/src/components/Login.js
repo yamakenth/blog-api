@@ -25,21 +25,19 @@ function Login() {
       password,
     };
 
-    axios
-      .post(`https://blog-api-server-rddz.onrender.com/api/users/login`, user)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.message) {
-          setError(res.data.message);
-        } else {
-          localStorage.setItem("token", "Bearer " + res.data.token);
-          localStorage.setItem("username", res.data.user.username);
-          setUsername("");
-          setPassword("");
-          navigate("/");
-          window.location.reload();
-        }
-      });
+    axios.post(`/api/users/login`, user).then((res) => {
+      console.log(res.data);
+      if (res.data.message) {
+        setError(res.data.message);
+      } else {
+        localStorage.setItem("token", "Bearer " + res.data.token);
+        localStorage.setItem("username", res.data.user.username);
+        setUsername("");
+        setPassword("");
+        navigate("/");
+        window.location.reload();
+      }
+    });
   }
 
   function ErrorMessage() {

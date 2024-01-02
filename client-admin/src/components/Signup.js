@@ -31,19 +31,17 @@ function Signup() {
       "password-confirm": passwordConfirm,
     };
 
-    axios
-      .post(`https://blog-api-server-rddz.onrender.com/api/users/signup`, user)
-      .then((res) => {
-        if (res.data.errors) {
-          setError(res.data.errors[0]);
-        } else {
-          setUsername("");
-          setPassword("");
-          setPasswordConfirm("");
+    axios.post(`/api/users/signup`, user).then((res) => {
+      if (res.data.errors) {
+        setError(res.data.errors[0]);
+      } else {
+        setUsername("");
+        setPassword("");
+        setPasswordConfirm("");
 
-          navigate("/");
-        }
-      });
+        navigate("/");
+      }
+    });
   }
 
   function ErrorMessage() {

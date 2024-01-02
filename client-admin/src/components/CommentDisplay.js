@@ -11,12 +11,9 @@ function ConfirmChangeModal(props) {
 
   function handleCommentDelete() {
     axios
-      .delete(
-        `https://blog-api-server-rddz.onrender.com/api/articles/${articleid}/comments/${props.commentid}`,
-        {
-          headers: { Authorization: localStorage.getItem("token") },
-        }
-      )
+      .delete(`/api/articles/${articleid}/comments/${props.commentid}`, {
+        headers: { Authorization: localStorage.getItem("token") },
+      })
       .then((res) => {
         console.log(res);
         window.location.reload();
@@ -58,9 +55,7 @@ function CommentDisplay(props) {
 
   useEffect(() => {
     axios
-      .get(
-        `https://blog-api-server-rddz.onrender.com/api/articles/${props.articleid}/comments`
-      )
+      .get(`/api/articles/${props.articleid}/comments`)
       .then((res) => {
         setComments(res.data);
       })

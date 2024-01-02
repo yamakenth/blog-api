@@ -26,7 +26,7 @@ function ArticleList() {
 
   useEffect(() => {
     axios
-      .get("https://blog-api-server-rddz.onrender.com/api/articles")
+      .get("/api/articles")
       .then((res) => {
         setArticles(res.data);
       })

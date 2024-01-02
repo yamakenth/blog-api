@@ -32,7 +32,7 @@ function ArticleDisplay(props) {
     // if edit mode then fetch data
     if (props.actionType === "edit") {
       axios
-        .get(`https://blog-api-server-rddz.onrender.com/api/articles/${id}`)
+        .get(`/api/articles/${id}`)
         .then((res) => {
           const data = res.data;
 
@@ -49,7 +49,7 @@ function ArticleDisplay(props) {
 
     // fetch list of users for author dropdown
     axios
-      .get("https://blog-api-server-rddz.onrender.com/api/users", {
+      .get("/api/users", {
         headers: { Authorization: localStorage.getItem("token") },
       })
       .then((res) => {
@@ -105,29 +105,21 @@ function ArticleDisplay(props) {
     // edit mode
     if (props.actionType === "edit") {
       axios
-        .put(
-          `https://blog-api-server-rddz.onrender.com/api/articles/${id}`,
-          jsonPayload,
-          authHeader
-        )
+        .put(`/api/articles/${id}`, jsonPayload, authHeader)
         .then((res) => handleEditRes(res));
     }
 
     // create mode
     if (props.actionType === "create") {
       axios
-        .post(
-          "https://blog-api-server-rddz.onrender.com/api/articles",
-          jsonPayload,
-          authHeader
-        )
+        .post("/api/articles", jsonPayload, authHeader)
         .then((res) => handleEditRes(res));
     }
   }
 
   function handleDelete() {
     axios
-      .delete(`https://blog-api-server-rddz.onrender.com/api/articles/${id}`, {
+      .delete(`/api/articles/${id}`, {
         headers: { Authorization: localStorage.getItem("token") },
       })
       .then((res) => {
