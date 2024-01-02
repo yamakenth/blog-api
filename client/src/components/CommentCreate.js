@@ -25,10 +25,7 @@ function CommentCreate() {
     };
 
     axios
-      .post(
-        `https://blog-api-server-rddz.onrender.com/api/articles/${id}/comments`,
-        comment
-      )
+      .post(`/api/articles/${id}/comments`, comment)
       .then((res) => {
         console.log(res);
         setAuthor("");

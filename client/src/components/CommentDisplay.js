@@ -9,9 +9,7 @@ function CommentDisplay(props) {
 
   useEffect(() => {
     axios
-      .get(
-        `https://blog-api-server-rddz.onrender.com/api/articles/${props.articleid}/comments`
-      )
+      .get(`/api/articles/${props.articleid}/comments`)
       .then((res) => {
         setComments(res.data);
       })

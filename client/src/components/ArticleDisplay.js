@@ -20,7 +20,7 @@ function ArticleDisplay() {
 
   useEffect(() => {
     axios
-      .get(`https://blog-api-server-rddz.onrender.com/api/articles/${id}`)
+      .get(`/api/articles/${id}`)
       .then((res) => {
         setArticle(res.data);
       })
