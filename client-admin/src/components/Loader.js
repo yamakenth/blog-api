@@ -7,8 +7,6 @@ function Loader() {
       style={{ width: "100vw", height: "100vh" }}
     >
       <Spinner animation="border" variant="secondary" className="mb-3" />
-      <span>This might take up to 30 seconds.</span>
-      <span>Thank you for your patience!</span>
     </div>
   );
 }
