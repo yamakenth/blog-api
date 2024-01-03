@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
+import { Form, Alert, Button } from "react-bootstrap";
 import axios from "axios";
 
 function Signup() {
@@ -95,9 +95,9 @@ function Signup() {
           onChange={handlePasswordConfirmChange}
         />
       </Form.Group>
-      <button type="submit" className="btn btn-primary align-self-center">
+      <Button type="submit" variant="primary">
         Signup
-      </button>
+      </Button>
       <ErrorMessage />
     </Form>
   );
