@@ -7,7 +7,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install:server": "npm install --prefix server",
+    "install:client": "npm install --prefix client",
+    "install:client-admin": "npm install --prefix client-admin",
+    "install:all": "npm run install:server && npm run install:client && npm run install:client-admin"
   },
   "keywords": [],
   "author": "",
