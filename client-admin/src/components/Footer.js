@@ -10,7 +10,7 @@ function Footer() {
         <Container>
           <Nav>
             <Nav.Link
-              href="https://github.com/yamakenth/blog-api-client-admin"
+              href="https://github.com/yamakenth/blog-api"
               target="_blank"
             >
               <i className="bi bi-github">&#9;GitHub</i>
