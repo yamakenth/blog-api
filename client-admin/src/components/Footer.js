@@ -21,10 +21,7 @@ function Footer() {
             Blog Admin
           </Navbar.Brand>
           <Nav>
-            <Nav.Link
-              href="https://yamakenth.github.io/blog-api-client/"
-              target="_blank"
-            >
+            <Nav.Link href="/client/#/articles" target="_blank">
               <i className="bi bi-person">&#9;User Page</i>
             </Nav.Link>
           </Nav>

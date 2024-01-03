@@ -10,7 +10,12 @@
     "install:server": "npm install --prefix server",
     "install:client": "npm install --prefix client",
     "install:client-admin": "npm install --prefix client-admin",
-    "install:all": "npm run install:server && npm run install:client && npm run install:client-admin"
+    "install:all": "npm run install:server && npm run install:client && npm run install:client-admin",
+    "build:client": "npm run build --prefix client",
+    "build:client-admin": "npm run build --prefix client-admin",
+    "build:all": "npm run build:client && npm run build:client-admin",
+    "build": "npm run install:all && npm run build:all",
+    "start": "npm start --prefix server"
   },
   "keywords": [],
   "author": "",
