@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
+import { Form, Alert, Button } from "react-bootstrap";
 import axios from "axios";
+
+const TEST_USER_USERNAME = "user1";
+const TEST_USER_PASSWORD = "user1";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -16,6 +19,11 @@ function Login() {
 
   function handlePasswordChange(e) {
     setPassword(e.target.value);
+  }
+
+  function handleAccountPopulation() {
+    setUsername(TEST_USER_USERNAME);
+    setPassword(TEST_USER_PASSWORD);
   }
 
   function handleSubmit(e) {
@@ -78,15 +86,16 @@ function Login() {
           onChange={handlePasswordChange}
         />
       </Form.Group>
-      <span className="align-self-center text-secondary">
-        Test Username: user1
-      </span>
-      <span className="align-self-center text-secondary mb-3">
-        Test Password: user1
-      </span>
-      <button type="submit" className="btn btn-primary align-self-center">
+      <Button type="submit" variant="primary" className="mb-2">
         Submit
-      </button>
+      </Button>
+      <Button
+        type="button"
+        variant="secondary"
+        onClick={handleAccountPopulation}
+      >
+        Populate with Test Admin Credentials
+      </Button>
       <ErrorMessage />
     </Form>
   );
