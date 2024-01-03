@@ -100,6 +100,6 @@ Consumers can submit a comment under an article.
 ## Technologies
 
 - **Languages:** Javascript, HTML, CSS
-- **Framework:** React.js, Node.js, Express.js, Bootstrap
+- **Frameworks:** React.js, Node.js, Express.js, Bootstrap
 - **Database:** MongoDB
 - **Libraries/Miscellaneous:** REST API, JWT, Passport.js
