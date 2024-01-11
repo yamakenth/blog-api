@@ -102,4 +102,4 @@ Consumers can submit a comment under an article.
 - **Languages:** Javascript, HTML, CSS
 - **Frameworks:** React.js, Node.js, Express.js, Bootstrap
 - **Database:** MongoDB
-- **Libraries/Miscellaneous:** REST API, JWT, Passport.js
+- **Libraries/Miscellaneous:** Docker, REST API, JWT, Passport.js
