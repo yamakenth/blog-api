@@ -8,10 +8,11 @@ var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 var apiRouter = require("./routes/api");
+var { MONGO_DB_URI, NODE_ENV } = require("./environment");
 require("./passport");
 
 // connection to MongoDB
-mongoose.connect(process.env.MONGO_DB_URI, {
+mongoose.connect(MONGO_DB_URI, {
   useNewUrlParser: true,
   useUnifiedtopology: true,
 });
@@ -30,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", apiRouter);
 
-if (process.env.NODE_ENV === "production") {
+if (NODE_ENV === "production") {
   app.get("/", (_req, res) => res.redirect("/client/#/articles"));
   const __dirname1 = path.resolve();
   app.use(express.static(path.join(__dirname1, "../client/build")));
