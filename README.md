@@ -8,7 +8,7 @@
 
 ## Demo
 
-[Deployment Link](https://blog-api-v04g.onrender.com)
+Deployed on Render with Docker image - [Deployment Link](https://blog-api-v04g.onrender.com)
 
 ![demo-page](./docs/demo-page.png)
 
